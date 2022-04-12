@@ -1,5 +1,8 @@
 import ExpenseItem from "./ExpenseItem";
-function Expenses(props) {
+// function Expenses(props) {
+// }
+
+const Expenses = (props) => {
   return props.data.map((item) => {
     return (
       <ExpenseItem
@@ -11,6 +14,6 @@ function Expenses(props) {
       />
     );
   });
-}
+};
 
 export default Expenses;
