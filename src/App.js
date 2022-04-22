@@ -1,31 +1,25 @@
 import Expenses from "./components/Expenses";
-import React from "react";
+import NewExpense from "./components/NewExpense/NewExpense";
+import { useState } from "react";
 import "./App.css";
 function App() {
-  const expenses = [
-    {
-      id: "e1",
-      title: "Toilet Paper",
-      amount: 94.122,
-      date: new Date(2020, 7, 14),
-    },
-    { id: "e2", title: "New TV", amount: 799.49, date: new Date(2021, 2, 12) },
-    {
-      id: "e3",
-      title: "Car Insurance",
-      amount: 294.687,
-      date: new Date(2021, 2, 28),
-    },
-    {
-      id: "e4",
-      title: "New Desk (Wooden)",
-      amount: 452,
-      date: new Date(2021, 5, 12),
-    },
-  ];
+  
+  const expenses = [];
+  const [expensesData, setExpensesData] = useState(expenses);
+
+  const addExpenseHandler = (expense) => {
+    console.log(expense,'before 1');
+    console.log(expenses, "before");
+    console.log("In app js");
+    expenses.push(expense);
+    console.log(expenses, "after");
+    setExpensesData(expensesData);
+    // return <Expenses data={expenses} />;
+  };
 
   return (
     <div className="App">
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses data={expenses} />
     </div>
   );

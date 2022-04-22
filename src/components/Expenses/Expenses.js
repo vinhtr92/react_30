@@ -2,8 +2,7 @@ import ExpenseItem from "./ExpenseItem";
 // function Expenses(props) {
 // }
 
-const Expenses = (props) => {
-  console.log(props);
+const ExpensesMain = (props) => {
   return props.data.map((item) => {
     return (
       <ExpenseItem
@@ -17,4 +16,4 @@ const Expenses = (props) => {
   });
 };
 
-export default Expenses;
+export default ExpensesMain;
